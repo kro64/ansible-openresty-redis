@@ -13,6 +13,20 @@ Once installed, user is able to visit the specific page to store it's user-agent
 *Visiting this link, you will be able to query the database with the key specified.*
 - 127.0.0.1/get?key=**YOURVALUE**
 
+# Requirements
+
+To be able to launch this playbook successfully, ansible remote_user must be able to connect to the host without any prompts.
+
+- SSH fingerprint of the remote host must be already trusted
+
+- Connecting to the host via SSH with ansible remote_user, must not require a password. (Installed ssh key.)
+
+- Ansible remote_user on the remote host, must have passwordless become option.
+
+Example:
+*sudo echo "ansible ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/ansible*
+
+
 # Installation
 
 This playbook was created using Ansible 2.8.1.
