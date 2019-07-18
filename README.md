@@ -13,13 +13,22 @@ Once installed, user is able to visit the specific page to store it's user-agent
 *Visiting this link, you will be able to query the database with the key specified.*
 - 127.0.0.1/get?key=**YOURVALUE**
 
+# Installation
+
+This playbook was created using Ansible 2.8.1.
+
+To launch the playbook, from the root directory, launch like this:
+ansible-playbook -i hosts playbooks/launch_hw.yml
+
 # Example usage
 
 This is an example of usage using curl. Let's say we want to manipulate our user-agent header, providing a custom value to the server.
 
 
 *To set the key in the database:*
+
 **curl -H "User-Agent: Baravykas" 127.0.0.1/set**
 
-To query a specified value:
+*To query a specified value:*
+
 **curl 127.0.0.1/get?key=Baravykas**
