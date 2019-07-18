@@ -18,7 +18,8 @@ Once installed, user is able to visit the specific page to store it's user-agent
 This playbook was created using Ansible 2.8.1.
 
 To launch the playbook, from the root directory, launch like this:
-ansible-playbook -i hosts playbooks/launch_hw.yml
+
+**ansible-playbook -i hosts playbooks/launch_hw.yml**
 
 # Example usage
 
