@@ -1,0 +1,4 @@
+---
+- import_tasks: install_epel.yml
+- import_tasks: install_openresty.yml
+- import_tasks: install_redis.yml

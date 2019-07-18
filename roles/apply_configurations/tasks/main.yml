@@ -1,0 +1,13 @@
+---
+- name: Load the Nginx configuration file nginx.conf
+  template:
+    src: nginx.conf
+    dest: /usr/local/openresty/nginx/conf/nginx.conf
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Reload Openresty service
+  service:
+    name: openresty
+    state: reloaded

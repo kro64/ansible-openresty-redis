@@ -1,0 +1,20 @@
+---
+- name: Install yum-utils
+  yum:
+    name: "yum-utils"
+    state: present
+  when: ansible_distribution == 'CentOS'
+
+- name: Check if OpenResty repository was previously installed
+  shell: ls /etc/yum.repos.d/ | grep resty
+  register: resty_check
+  ignore_errors: true
+
+- name: Add OpenResty repository
+  shell: yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
+  when:
+    - resty_check.rc != 0
+
+- name: Install OpenResty for Nginx with precompiled lua
+  yum:
+    name: ['openresty', 'openresty-resty']
